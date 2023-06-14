@@ -1,6 +1,43 @@
 header {
-  text-align: center;
-  color: red;
+  height: 70px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  color: black;
+  background-color: lightblue;
+  font-size: 36px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  background-color: violet;
+  padding: 20px 30px;
+}
+
+.card-manager {
+  background-color: greenyellow;
+  padding: 20px 30px;
+}
+.card-manager .card {
+  background-color: palevioletred;
+  width: 250px;
+}
+.card-manager .card .card-delete {
+  padding: 3px 5px;
+  text-align: right;
+  background-color: #e599b2;
+  display: flex;
+  justify-content: space-between;
+}
+.card-manager .card .card-content {
+  background-color: #e599b2;
+}
+.card-manager .card .card-title {
+  padding: 3px 5px;
 }
 
 /*# sourceMappingURL=main.css.map */
