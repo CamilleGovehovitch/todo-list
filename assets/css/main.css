@@ -25,6 +25,9 @@ header h1 {
 .card-manager .card {
   background-color: palevioletred;
   width: 250px;
+  border: solid 1px lightgrey;
+  -webkit-box-shadow: 5px 5px 14px -7px #000000;
+  box-shadow: 5px 5px 14px -7px #000000;
 }
 .card-manager .card .card-delete {
   padding: 3px 5px;
