@@ -1,6 +1,55 @@
 header {
-  text-align: center;
-  color: red;
+  height: 70px;
+  background-color: #a74f75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  color: black;
+  background-color: lightblue;
+  font-size: 36px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  background-color: #a74f75;
+  padding: 20px 30px;
+  height: 30px;
+}
+
+.card-manager {
+  background-color: #ffac8b;
+  height: fit-content;
+  padding: 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-manager .card {
+  background-color: palevioletred;
+  width: 250px;
+  height: 300px;
+  border: solid 1px lightgrey;
+  -webkit-box-shadow: 5px 5px 14px -7px #000000;
+  box-shadow: 5px 5px 14px -7px #000000;
+  margin: 10px 20px;
+}
+.card-manager .card .card-controllers {
+  background-color: #e599b2;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 5px;
+  height: 10%;
+  text-align: right;
+}
+.card-manager .card .card-content {
+  background-color: #e599b2;
+  height: 60%;
+}
+.card-manager .card .card-title {
+  padding: 3px 5px;
+  height: 30%;
 }
 
 /*# sourceMappingURL=main.css.map */

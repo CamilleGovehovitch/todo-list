@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/main.css">
   <title>Document</title>
 </head>
@@ -11,5 +12,36 @@
   <header>
     <h1>TODO-LIST</h1>
   </header>
+  <div class="dashboard">
+    <h2>DASHBOARD</h2>
+    <div class="dashboard-informations">
+      <h3>Informations</h2>
+      <span id="currentDay"></span>
+    </div>
+    <div class="dashboard-controls">
+      <h3>Controls</h3>
+      <button onclick="createCard()">Add Card</button>
+    </div>
+  </div>
+  <div class="card-manager" id="cardManager">
+    <div class="card">
+      <div class="card-controllers">
+        <button>Add tasks</button>
+        <button>Delete</button>
+      </div>
+      <div class="card-content">
+        <div class="card-items">
+          <input type="checkbox" id="card-item-1" value="hey">
+          <label for="card-item-1">hey</label>
+        </div>
+      </div>
+      <div class="card-title">
+        <h4>Card n°1</h4>
+        <span>Do a todo-list</span>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/js/index.js" defer></script>
+  <script src="./assets/js/card.js"></script>
 </body>
 </html>
