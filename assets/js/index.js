@@ -26,10 +26,3 @@ function createCard() {
   cardArray.push(card);
   card.createCard();
 }
-
-// function deleteCard(cardId) {
-//   const cardElement = document.querySelector(`[data-card-id="${this.id}"]`);
-//   if (cardElement) {
-//     cardElement.remove();
-//   }
-// }
