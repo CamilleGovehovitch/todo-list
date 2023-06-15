@@ -29,5 +29,3 @@ function createCard() {
   console.log(localStorage);
 
 }
-
-

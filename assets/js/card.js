@@ -40,6 +40,14 @@ class Card {
 
     addTaskButton.appendChild(document.createTextNode('Add Task'));
     deleteButton.appendChild(document.createTextNode('Delete'));
+
+    // make icons clickable
+    addTaskButton.onclick = () => {
+      console.log('hello');
+    }
+    deleteButton.onclick = () => {
+      console.log()
+    }
     controllersElement.appendChild(addTaskButton);
     controllersElement.appendChild(deleteButton);
 
@@ -47,6 +55,7 @@ class Card {
   }
 
   createContentCard() {
+    const cardManager = document.getElementById('cardManager');
     const contentElement = document.createElement('div');
     const addTaskButton = document.createElement('button');
     const unorderedTaskList = document.createElement('ul');
