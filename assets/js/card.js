@@ -7,12 +7,14 @@ class Card {
     const cardElement = document.createElement('div');
     const controllersCard = this.createControllersCard();
     const contentCard = this.createContentCard();
+    const titleCard = this.createTitleCard();
 
     cardElement.classList.add('card');
 
     cardManager.appendChild(cardElement);
     cardElement.appendChild(controllersCard);
     cardElement.appendChild(contentCard);
+    cardElement.appendChild(titleCard);
   } 
 
   createControllersCard() {
@@ -24,6 +26,14 @@ class Card {
 
     addTaskButton.appendChild(document.createTextNode('Add Task'));
     deleteButton.appendChild(document.createTextNode('Delete'));
+
+    // make icons clickable
+    addTaskButton.onclick = () => {
+      console.log('hello');
+    }
+    deleteButton.onclick = () => {
+      console.log()
+    }
     controllersElement.appendChild(addTaskButton);
     controllersElement.appendChild(deleteButton);
 
@@ -31,15 +41,22 @@ class Card {
   }
 
   createContentCard() {
-    const cardManager = document.getElementById('cardManager');
     const contentElement = document.createElement('div');
-    const checkBoxElement = document.createElement('checkbox');
-    const labelElement = document.createElement('label');
 
     contentElement.classList.add('card-content');
-    contentElement.appendChild(checkBoxElement);
-    contentElement.appendChild(labelElement);
 
     return contentElement;
+  }
+
+  createTitleCard() {
+    const titleContainer = document.createElement('div');
+
+    titleContainer.classList.add('card-title');
+
+    return titleContainer;
+  }
+  
+  addTask(task) {
+    console.log(task);
   }
 }
