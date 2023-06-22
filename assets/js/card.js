@@ -2,6 +2,7 @@ class Card {
   static idCounter = 0;
   constructor (title) {
     this.id = Card.idCounter++;
+    this.id = Date.now();
     this.title = title;
     // this.createCard();
   }
@@ -38,16 +39,9 @@ class Card {
       this.createTask();
     })
 
+
     addTaskButton.appendChild(document.createTextNode('Add Task'));
     deleteButton.appendChild(document.createTextNode('Delete'));
-
-    // make icons clickable
-    addTaskButton.onclick = () => {
-      console.log('hello');
-    }
-    deleteButton.onclick = () => {
-      console.log()
-    }
     controllersElement.appendChild(addTaskButton);
     controllersElement.appendChild(deleteButton);
 
