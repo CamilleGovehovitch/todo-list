@@ -1,5 +1,6 @@
 class Card {
   constructor (title) {
+    this.id = Date.now();
     this.title = title;
   }
   createCard() {
@@ -23,17 +24,14 @@ class Card {
     const deleteButton = document.createElement('button');
 
     controllersElement.classList.add('card-controllers');
+    deleteButton.setAttribute('class', 'delete-button');
+
+    deleteButton.onclick = () => {
+      deleteCard(this.id);
+    }
 
     addTaskButton.appendChild(document.createTextNode('Add Task'));
     deleteButton.appendChild(document.createTextNode('Delete'));
-
-    // make icons clickable
-    addTaskButton.onclick = () => {
-      console.log('hello');
-    }
-    deleteButton.onclick = () => {
-      console.log()
-    }
     controllersElement.appendChild(addTaskButton);
     controllersElement.appendChild(deleteButton);
 
