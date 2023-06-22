@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Le reste de votre code JavaScript va ici
 });
+
 let cardArray = [];
 let te = [];
 
@@ -21,8 +22,23 @@ window.onload = () => {
 
 addCardButton.addEventListener('click', createCard);
 
+
 function createCard() {
   const card = new Card('title');
-  cardArray.push(card);
   card.createCard();
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].setAttribute('id', 'card-' + (i + 1));
+    cardArray.push(cards[i]);
+    console.log(cardArray);
+  }
+}
+
+function deleteCard(cardId) {
+  let elementToDelete = null;
+  for (let i = 0; i < cards.length; i++) {
+    if (parseInt(cards[i].id) === cardId) {
+      elementToDelete = cards[i];
+    }
+  }
+  elementToDelete.remove();
 }
