@@ -20,12 +20,8 @@ let cardArray = [];
 
 addCardButton.addEventListener('click', createCard);
 
+
 function createCard() {
   const card = new Card('title');
-  cardArray.push(card);
   card.createCard();
-  localStorage.setItem('Card-' + card.id, card.id);
-  const maValeur = localStorage.getItem('Card');
-  console.log(localStorage);
-
 }
