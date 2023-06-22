@@ -1,5 +1,7 @@
 const currentDay = document.getElementById('currentDay');
 const cards = document.getElementsByClassName('card');
+const deleteButtons = document.getElementsByClassName('delete-button');
+
 let cardArray = [];
 
 window.onload = () => {
@@ -11,16 +13,20 @@ window.onload = () => {
 }
 
 function createCard() {
-  // let title = window.prompt('Veuillez entrer un titre de carte').value;
   const card = new Card('title');
   card.createCard();
   for (let i = 0; i < cards.length; i++) {
-    cards[i].setAttribute('id', 'card-' + (i + 1));
+    cards[i].setAttribute('id', card.id);
     cardArray.push(cards[i]);
-    console.log(cardArray);
   }
 }
 
-function deleteCard(cardArray) {
-  console.log(cardArray);
+function deleteCard(cardId) {
+  let elementToDelete = null;
+  for (let i = 0; i < cards.length; i++) {
+    if (parseInt(cards[i].id) === cardId) {
+      elementToDelete = cards[i];
+    }
+  }
+  elementToDelete.remove();
 }
