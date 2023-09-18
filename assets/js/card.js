@@ -38,6 +38,11 @@ class Card {
       this.createTask();
     })
 
+    addTaskButton.addEventListener('click', () => {
+      console.log(this.id);
+      this.createTask();
+    })
+
 
     addTaskButton.appendChild(document.createTextNode('Add Task'));
     deleteButton.appendChild(document.createTextNode('Delete'));
@@ -67,13 +72,26 @@ class Card {
   }
   
   deleteCard() {
-    const cardElement = document.querySelector('[data-card-id="' + cardId + '"]');
+const cardElement = document.querySelector('[data-card-id="' + this.id + '"]');
     if (cardElement) {
       cardElement.remove();
     }
   }  
-  
-  addTask(task) {
-    console.log(task);
+
+  createTask() {
+    const unorderedTaskList = document.getElementById('taskList-' + this.id);
+    const contentElement = document.createElement('div');
+    const taskContainer = document.createElement('div');
+    // const unorderedTask = document.createElement('ul');
+    const liTag = document.createElement('li');
+
+    const task = prompt('Entrer une tâche');
+
+    liTag.appendChild(document.createTextNode(task));
+    unorderedTaskList.appendChild(liTag);
+    taskContainer.appendChild(unorderedTask);
+    contentElement.appendChild(taskContainer);
+
   }
-}
+} 
+  
