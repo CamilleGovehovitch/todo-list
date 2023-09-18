@@ -2,7 +2,6 @@ class Card {
   static idCounter = 0;
   constructor (title) {
     this.id = Card.idCounter++;
-    this.id = Date.now();
     this.title = title;
     // this.createCard();
   }
@@ -66,6 +65,13 @@ class Card {
 
     return titleContainer;
   }
+  
+  deleteCard() {
+    const cardElement = document.querySelector(`[data-card-id="${this.id}"]`);
+    if (cardElement) {
+      cardElement.remove();
+    }
+  }  
   
   addTask(task) {
     console.log(task);

@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Le reste de votre code JavaScript va ici
 });
+const addCardButton = document.getElementById('addCardButton');
+document.addEventListener('DOMContentLoaded', function () {
+  const currentDay = document.getElementById('currentDay');
+  const cardManager = document.getElementById('cardManager');
 
 let cardArray = [];
 let te = [];
@@ -22,9 +26,12 @@ window.onload = () => {
 
 addCardButton.addEventListener('click', createCard);
 
+addCardButton.addEventListener('click', createCard);
+
 
 function createCard() {
   const card = new Card('title');
+  cardArray.push(card);
   card.createCard();
   for (let i = 0; i < cards.length; i++) {
     cards[i].setAttribute('id', 'card-' + (i + 1));
