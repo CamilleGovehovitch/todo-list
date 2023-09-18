@@ -1,7 +1,9 @@
 class Card {
+  static idCounter = 0;
   constructor (title) {
-    this.id = Date.now();
+    this.id = Card.idCounter++;
     this.title = title;
+    // this.createCard();
   }
   createCard() {
     const cardManager = document.getElementById('cardManager');
@@ -11,7 +13,8 @@ class Card {
     const titleCard = this.createTitleCard();
 
     cardElement.classList.add('card');
-
+    cardElement.setAttribute('data-card-id', this.id); // Ajouter un attribut data pour stocker l'ID
+    
     cardManager.appendChild(cardElement);
     cardElement.appendChild(controllersCard);
     cardElement.appendChild(contentCard);
@@ -26,9 +29,9 @@ class Card {
     controllersElement.classList.add('card-controllers');
     deleteButton.setAttribute('class', 'delete-button');
 
-    deleteButton.onclick = () => {
-      deleteCard(this.id);
-    }
+    deleteButton.addEventListener('click', () => {
+      this.deleteCard();
+    })
 
     addTaskButton.appendChild(document.createTextNode('Add Task'));
     deleteButton.appendChild(document.createTextNode('Delete'));
@@ -53,6 +56,13 @@ class Card {
 
     return titleContainer;
   }
+  
+  deleteCard() {
+    const cardElement = document.querySelector(`[data-card-id="${this.id}"]`);
+    if (cardElement) {
+      cardElement.remove();
+    }
+  }  
   
   addTask(task) {
     console.log(task);
