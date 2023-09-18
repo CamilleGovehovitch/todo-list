@@ -23,5 +23,6 @@ addCardButton.addEventListener('click', createCard);
 
 function createCard() {
   const card = new Card('title');
+  cardArray.push(card);
   card.createCard();
 }
