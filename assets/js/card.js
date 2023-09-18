@@ -67,7 +67,7 @@ class Card {
   }
   
   deleteCard() {
-    const cardElement = document.querySelector(`[data-card-id="${this.id}"]`);
+    const cardElement = document.querySelector('[data-card-id="' + cardId + '"]');
     if (cardElement) {
       cardElement.remove();
     }
