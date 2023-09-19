@@ -75,14 +75,27 @@ const cardElement = document.querySelector('[data-card-id="' + this.id + '"]');
     const unorderedTaskList = document.getElementById('taskList-' + this.id);
     const contentElement = document.createElement('div');
     const taskContainer = document.createElement('div');
-    // const unorderedTask = document.createElement('ul');
+    const liContainer = document.createElement('div');
+    const liContent = document.createElement('span');
+    const removeIcon = document.createElement('i');
+
+    removeIcon.classList.add('fas');
+    removeIcon.classList.add('fa-times')
+    liContainer.classList.add('liContent');
+
+    removeIcon.addEventListener('click', () => {
+      console.log('hey');
+      liContainer.remove();
+    })
     const liTag = document.createElement('li');
 
     const task = prompt('Entrer une tâche');
-
-    liTag.appendChild(document.createTextNode(task));
+    liContent.appendChild(document.createTextNode(task));
+    liContainer.appendChild(liContent);
+    liContainer.appendChild(removeIcon);
+    liTag.appendChild(liContainer);
     unorderedTaskList.appendChild(liTag);
-    taskContainer.appendChild(unorderedTask);
+
     contentElement.appendChild(taskContainer);
 
   }
