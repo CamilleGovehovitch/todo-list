@@ -77,10 +77,36 @@ const cardElement = document.querySelector('[data-card-id="' + this.id + '"]');
       cardElement.remove();
     }
   }  
-  
-  addTask(task) {
-    console.log(task);
-  }
+
+
+  createTask() {
+    const unorderedTaskList = document.getElementById('taskList-' + this.id);
+    const contentElement = document.createElement('div');
+    const taskContainer = document.createElement('div');
+    const liContainer = document.createElement('div');
+    const liContent = document.createElement('span');
+    const removeIcon = document.createElement('i');
+
+    removeIcon.classList.add('fas');
+    removeIcon.classList.add('fa-times')
+    liContainer.classList.add('liContent');
+
+    removeIcon.addEventListener('click', () => {
+      console.log('hey');
+      liContainer.remove();
+    })
+    const liTag = document.createElement('li');
+
+    const task = prompt('Entrer une tâche');
+    liContent.appendChild(document.createTextNode(task));
+    liContainer.appendChild(liContent);
+    liContainer.appendChild(removeIcon);
+    liTag.appendChild(liContainer);
+    unorderedTaskList.appendChild(liTag);
+
+    contentElement.appendChild(taskContainer);
+
+
 } 
   
 }
