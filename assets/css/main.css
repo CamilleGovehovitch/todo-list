@@ -46,6 +46,11 @@ header h1 {
 .card-manager .card .card-content {
   background-color: #e599b2;
   height: 60%;
+  padding: 3px 5px;
+}
+.card-manager .card .card-content ul li .liContent {
+  display: flex;
+  justify-content: space-between;
 }
 .card-manager .card .card-title {
   padding: 3px 5px;

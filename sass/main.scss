@@ -48,6 +48,16 @@ header {
     .card-content {
       background-color: lighten(palevioletred, 10);
       height: 60%;
+      padding: 3px 5px; 
+      ul {
+        li {
+          .liContent {
+            display: flex;
+            justify-content: space-between;
+          }
+
+        }
+      }
     }
     .card-title {
       padding: 3px 5px;
