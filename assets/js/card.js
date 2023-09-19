@@ -38,12 +38,6 @@ class Card {
       this.createTask();
     })
 
-    addTaskButton.addEventListener('click', () => {
-      console.log(this.id);
-      this.createTask();
-    })
-
-
     addTaskButton.appendChild(document.createTextNode('Add Task'));
     deleteButton.appendChild(document.createTextNode('Delete'));
     controllersElement.appendChild(addTaskButton);
@@ -53,7 +47,6 @@ class Card {
   }
 
   createContentCard() {
-    const cardManager = document.getElementById('cardManager');
     const contentElement = document.createElement('div');
     const addTaskButton = document.createElement('button');
     const unorderedTaskList = document.createElement('ul');
