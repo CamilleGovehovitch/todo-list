@@ -12,20 +12,29 @@ document.addEventListener('DOMContentLoaded', function () {
   const month = newDate.getMonth() + 1;
   const year = newDate.getFullYear();
   currentDay.innerHTML = day.toString() + '/' + month.toString() + '/' + year.toString();
+
+  let cardArray = [];
+
+  addCardButton.addEventListener('click', createCard);
+  
+  function createCard() {
+    const card = new Card('title');
+    cardArray.push(card);
+    card.createCard();
+    localStorage.setItem('Card-' + card.id, card.id);
+    const maValeur = localStorage.getItem('Card');
+    console.log(localStorage);
+  
+  }
+
+  // Vérifie si le local storage est vide ou non
+  if (localStorage !== 0) {
+    console.log(localStorage.length);
+    for (const key in localStorage) {
+      console.log(key);
+    }
+  }
 });
 
 
 
-let cardArray = [];
-
-addCardButton.addEventListener('click', createCard);
-
-function createCard() {
-  const card = new Card('title');
-  cardArray.push(card);
-  card.createCard();
-  localStorage.setItem('Card-' + card.id, card.id);
-  const maValeur = localStorage.getItem('Card');
-  console.log(localStorage);
-
-}
