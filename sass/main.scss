@@ -4,21 +4,22 @@ $color3 : #a74f75;
 $color4 : #ef7282;
 $color5 : #ffac8b;
 
+body {
+  background-color: $color5;
+}
 header {
-  height: 70px;;
+  height: 50px;;
   background-color: $color3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   h1 {
     color: black;
-    background-color: lightblue;
     font-size: 36px;
+    text-align: center;
   }
 }
 .dashboard {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   background-color: $color3;
   padding: 20px 30px;
   height: 30px;
@@ -30,27 +31,36 @@ header {
   display: flex;
   flex-wrap: wrap;
   .card {
-    background-color: palevioletred;
+    background-color: $color4;
     width: 250px;
     height: 300px;
     border: solid 1px lightgrey;
+    border-radius: 20px;
     -webkit-box-shadow: 5px 5px 14px -7px #000000; 
     box-shadow: 5px 5px 14px -7px #000000;
     margin: 10px 20px;
     .card-controllers {
-      background-color: lighten(palevioletred, 10);
+      background-color: $color4;
       display: flex;
       justify-content: space-between;
-      padding: 3px 5px;
+      padding: 10px 7px;
       height: calc(100% - 90%);
       text-align: right;
+      border-radius: 20px 20px 0 0;
     }
     .card-content {
-      background-color: lighten(palevioletred, 10);
+      background-color: $color4;
       height: 60%;
-      padding: 3px 5px; 
+      padding: 10px; 
       ul {
         li {
+          .task-check {
+            display: flex;
+            align-items: center;
+            input {
+              margin-right: 5px;
+            }
+          }
           .liContent {
             display: flex;
             justify-content: space-between;
@@ -62,6 +72,13 @@ header {
     .card-title {
       padding: 3px 5px;
       height: 30%;
+      h2 {
+        text-align: center;
+        padding: 10px 0;
+      }
     }
   }
+}
+.task-checked {
+  text-decoration-line: line-through;
 }

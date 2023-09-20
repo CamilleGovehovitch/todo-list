@@ -1,19 +1,21 @@
+body {
+  background-color: #ffac8b;
+}
+
 header {
-  height: 70px;
+  height: 50px;
   background-color: #a74f75;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 header h1 {
   color: black;
-  background-color: lightblue;
   font-size: 36px;
+  text-align: center;
 }
 
 .dashboard {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   background-color: #a74f75;
   padding: 20px 30px;
   height: 30px;
@@ -27,26 +29,35 @@ header h1 {
   flex-wrap: wrap;
 }
 .card-manager .card {
-  background-color: palevioletred;
+  background-color: #ef7282;
   width: 250px;
   height: 300px;
   border: solid 1px lightgrey;
+  border-radius: 20px;
   -webkit-box-shadow: 5px 5px 14px -7px #000000;
   box-shadow: 5px 5px 14px -7px #000000;
   margin: 10px 20px;
 }
 .card-manager .card .card-controllers {
-  background-color: #e599b2;
+  background-color: #ef7282;
   display: flex;
   justify-content: space-between;
-  padding: 3px 5px;
+  padding: 10px 7px;
   height: 10%;
   text-align: right;
+  border-radius: 20px 20px 0 0;
 }
 .card-manager .card .card-content {
-  background-color: #e599b2;
+  background-color: #ef7282;
   height: 60%;
-  padding: 3px 5px;
+  padding: 10px;
+}
+.card-manager .card .card-content ul li .task-check {
+  display: flex;
+  align-items: center;
+}
+.card-manager .card .card-content ul li .task-check input {
+  margin-right: 5px;
 }
 .card-manager .card .card-content ul li .liContent {
   display: flex;
@@ -55,6 +66,14 @@ header h1 {
 .card-manager .card .card-title {
   padding: 3px 5px;
   height: 30%;
+}
+.card-manager .card .card-title h2 {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.task-checked {
+  text-decoration-line: line-through;
 }
 
 /*# sourceMappingURL=main.css.map */
