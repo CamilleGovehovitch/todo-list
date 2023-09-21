@@ -24,9 +24,17 @@ header h1 {
 .card-manager {
   background-color: #ffac8b;
   height: fit-content;
+  width: auto;
   padding: 20px 30px;
   display: flex;
   flex-wrap: wrap;
+}
+.card-manager .card-label {
+  background-color: red;
+  width: 33%;
+}
+.card-manager .card-label .card-label-title {
+  text-align: center;
 }
 .card-manager .card {
   background-color: #ef7282;

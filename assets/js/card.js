@@ -1,12 +1,13 @@
 class Card {
   static idCounter = 0;
+
   constructor (title) {
     this.id = Card.idCounter++;
     this.title = title;
-    // this.createCard();
   }
+  
   createCard() {
-    const cardManager = document.getElementById('cardManager');
+    const cardNotStarted = document.getElementById('cardNotStarted');
     const cardElement = document.createElement('div');
     const controllersCard = this.createControllersCard();
     const contentCard = this.createContentCard();
@@ -15,7 +16,7 @@ class Card {
     cardElement.classList.add('card');
     cardElement.setAttribute('data-card-id', this.id); // Ajouter un attribut data pour stocker l'ID
     
-    cardManager.appendChild(cardElement);
+    cardNotStarted.appendChild(cardElement);
     cardElement.appendChild(controllersCard);
     cardElement.appendChild(contentCard);
     cardElement.appendChild(titleCard);
